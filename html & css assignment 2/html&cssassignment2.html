@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Positioning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: lightgrey;
+            padding: 20px;
+        }
+        .static-div {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .relative-div {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        .absolute-div {
+            background-color: #FF5722;
+            color: white;
+            padding: 20px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Positioning Example</h1>
+
+    <div class="static-div">
+        This is a static positioned div.
+    </div>
+
+    <div class="relative-div">
+        This is a relative positioned div (top: 20px, left: 20px).
+    </div>
+
+    <div class="container">
+        <div class="absolute-div">
+            This is an absolute positioned div inside a parent container.
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Header Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fixed header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content padding to prevent overlap */
+        .content {
+            margin-top: 80px; /* Adjust based on header height */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MyLogo</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content">
+       
+    </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            grid-template-rows: repeat(2, 200px); /* 2 rows with 200px height */
+            gap: 10px; /* Space between grid items */
+            padding: 20px;
+        }
+
+        .box {
+            background-color: #4c6aaf;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Card Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-template-rows: repeat(3, 300px); /* 3 rows with 300px height */
+            gap: 20px; /* Space between cards */
+            padding: 20px;
+        }
+
+        .youtube-card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transition */
+        }
+
+        .youtube-card:hover {
+            transform: scale(1.05); /* Slightly increase in size */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #ccc;
+            background-image: url('https://via.placeholder.com/300x180'); /* Placeholder for thumbnail */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .title {
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold; /* Bold title */
+            color: #333;
+            margin: 0;
+        }
+
+        .description {
+            padding: 10px 0;
+            color: #555;
+            font-size: 14px;
+            margin-top: 10px; /* Space between title and description */
+        }
+
+        .yt-cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+ .yt-thumbnail{
+    position: relative;
+    img{
+        width: 100%;
+
+    }
+}
+.timestamp{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 2px;
+}
+.video-info-grid{
+    display: grid;
+    grid-template-columns: 48px 1fr;
+}
+.channel-profile{
+    padding: 7px 10px 0px 3px;
+    img{
+        width: 36px;
+        border-radius: 50px;
+    
+    }
+
+}
+.video-title{
+    margin-top: 15px;
+    font-weight: bold;
+    
+}
+.channel-name,.video-stats{
+    color: #606060;
+    font-size: 12px;
+
+}
+@media screen and (max-width: 480px){
+    .yt-cards-container{
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 20px;
+    
+    }
+} 
+body{
+    font-family: "Playwrite Colombia Guides ";
+}
+    </style>
+</head>
+<body>
+
+    <div class="yt-cards-container">
+        <div class="yt-card">
+            <div class="yt-thumbnail">
+                <a href="https://youtu.be/-TN6qdqkDtU" target="_blank">
+                    <img src="https://i.ytimg.com/vi/-TN6qdqkDtU/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBJsRUkWVjAth-hc-wUZarlJHdFMg" ait="thumbnail image">
+                </a>
+                <div class="timestamp">33:35</div>
+
+            </div>
+            <div class="video-info-grid">
+                <div class="channel-profile">
+                    <img src="https://yt3.ggpht.com/ATJuCH36wHPiFwumVBm423ouLVGQtq2pkPMOlSCclqqXErazOWyl4n07MRmbFnSJTL5P02Fq=s68-c-k-c0x00ffffff-no-rj">
+                </div>
+                <div class="video-info">
+                    <p class="video-title">How USA and Russia Fought the Biggest Proxy War in Syria?</p>
+                    <p class="channel-profile">Dhurv Rathee</p>
+                    <p class="video-stats">3.7M views . 6 months ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 2</div>
+            <div class="description">This is a short description of the video 2.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 3</div>
+            <div class="description">This is a short description of the video 3.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 4</div>
+            <div class="description">This is a short description of the video 4.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 5</div>
+            <div class="description">This is a short description of the video 5.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 6</div>
+            <div class="description">This is a short description of the video 6.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 7</div>
+            <div class="description">This is a short description of the video 7.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 8</div>
+            <div class="description">This is a short description of the video 8.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 9</div>
+            <div class="description">This is a short description of the video 9.</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main content area */
+        .content {
+            flex-grow: 1; /* Allows the content to grow and push footer to the bottom */
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* Sticky footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="footer">
+        Copyright © 2024
+    </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Grid Layout</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Fixed header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            z-index: 1000; /* Ensure header stays above other content */
+        }
+
+        /* Main content section (below header) */
+        .main-content {
+            margin-top: 70px; /* Space to make room for the fixed header */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-template-rows: repeat(3, 300px); /* 3 rows */
+            gap: 20px; /* Space between the grid items */
+            padding: 20px;
+            flex-grow: 1; /* Ensure the grid takes up the remaining space */
+        }
+
+        /* YouTube card styling */
+        .youtube-card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for YouTube cards */
+        .youtube-card:hover {
+            transform: scale(1.05); /* Slightly enlarge the card */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+        }
+
+        /* Thumbnail style */
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #ccc;
+            background-image: url('https://via.placeholder.com/300x180'); /* Placeholder for thumbnail */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Title style */
+        .title {
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Description style */
+        .description {
+            padding: 10px 0;
+            color: #555;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        YouTube Video Gallery
+    </header>
+
+    <!-- Main content area with grid layout -->
+    <div class="main-content">
+        <!-- YouTube Cards -->
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 1</div>
+            <div class="description">Short description of video 1.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 2</div>
+            <div class="description">Short description of video 2.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 3</div>
+            <div class="description">Short description of video 3.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 4</div>
+            <div class="description">Short description of video 4.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 5</div>
+            <div class="description">Short description of video 5.</div>
+        </div>
+
+        <div class="youtube-card">
+            <div class="thumbnail"></div>
+            <div class="title">Video Title 6</div>
+            <div class="description">Short description of video 6.</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
